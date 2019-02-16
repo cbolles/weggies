@@ -32,4 +32,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-configurations.all {exclude group: 'com.android.support', module: 'support-v4'}
+configurations.all { exclude group: 'com.android.support', module: 'support-v4' }
