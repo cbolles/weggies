@@ -1,5 +1,8 @@
 package com.main.weggies;
 
+import com.main.weggies.model.product
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import java.util.HashMap;
 
 /** Used to display products in your personal cart
@@ -12,7 +15,7 @@ import java.util.HashMap;
  */
 public class ShoppingCart {
     private int size;
-    private double total;
+    private double total; //All item prices, + price*tax
     private HashMap cart; //TODO specify as product, amount
 
     /**
@@ -31,9 +34,14 @@ public class ShoppingCart {
      * @param item a product
      * @param amount integer marking amount of products added
      */
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void addXProduct(Product item, int amount){
         size += amount;
-
+        if (cart.containsKey(item)){
+            cart.replace(item, cart.get(item) + amount); //Keep an eye on this warning
+        }
+        else cart.put(item, amount);
+        total = item.getPrice; //TODO actually find a way to calculate total after add
     }
 
     /**
@@ -42,8 +50,15 @@ public class ShoppingCart {
      * @param item a product
      * @param amount integer marking amount of products added
      */
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void removeXProduct(Product item, int amount){
+        size -= amount;
+        if (cart.get(item) <= amount){
+            cart.remove(item);
+        }
+        else cart.replace(item, cart.get(item) - amount);
 
+        total =  69.69; //TODO actually find a way to calculator total after remove
     }
 
 }
