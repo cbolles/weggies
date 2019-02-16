@@ -1,5 +1,7 @@
 package com.main.weggies.model.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 public class Product {
@@ -36,6 +38,8 @@ public class Product {
     private List<TradeIdentifier> tradeIdentifiers;
     private List<State> states;
     private List<Link> _links;
+    @JsonIgnore
+    private double price;
 
     public int getSku() {
         return sku;
@@ -46,7 +50,7 @@ public class Product {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -299,5 +303,13 @@ public class Product {
 
     public void set_links(List<Link> _links) {
         this._links = _links;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
