@@ -1,9 +1,8 @@
 package com.main.weggies;
 
-<<<<<<< HEAD
-=======
+
 import com.main.weggies.model.product.Product;
->>>>>>> a20c3cd10e343467d10ed91ac039b2029bf77549
+
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
