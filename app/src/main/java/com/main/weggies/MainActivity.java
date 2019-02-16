@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void proceed(){
-        Intent intent = new Intent(this, ScrollingActivity.class);
+        Intent intent = new Intent(this, SetPreferences.class);
         EditText budgetTxt = (EditText)findViewById(R.id.budget);
         EditText householdTxt = (EditText)findViewById(R.id.household);
 
