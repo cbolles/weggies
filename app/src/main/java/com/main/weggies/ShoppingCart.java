@@ -15,6 +15,7 @@ import java.util.HashMap;
  * OPERATORS:
  * - addXProduct: Adds x amount of a product, increases size and total
  * - removeXProduct: Removes x amount of a product, increases size and total
+ * - emptyCart: Completely empties the card, total set to zero, size set to zero
  */
 public class ShoppingCart {
     private int size;
@@ -66,6 +67,10 @@ public class ShoppingCart {
 
         total -=  item.getPrice(); //TODO actually find a way to calculator total after remove
 
+    }
+
+    public void emptyCart(){
+        cart.clear();
     }
 
 }
