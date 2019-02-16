@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity {
 
     float budget;
     int household;
+    Store store;
 
     String BUDGET = "com.main.weggies.BUDGET";
     String HOUSEHOLD = "com.main.weggies.HOUSEHOLD";
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(HOUSEHOLD, household);
 
         startActivity(intent);
+
+    }
+
+    public void getStore(){
 
     }
 

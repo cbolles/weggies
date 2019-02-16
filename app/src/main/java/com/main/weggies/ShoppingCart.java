@@ -1,6 +1,7 @@
 package com.main.weggies;
 
-import com.main.weggies.model.product
+import com.main.weggies.model.product.Product;
+
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import java.util.HashMap;
@@ -38,10 +39,10 @@ public class ShoppingCart {
     public void addXProduct(Product item, int amount){
         size += amount;
         if (cart.containsKey(item)){
-            cart.replace(item, cart.get(item) + amount); //Keep an eye on this warning
+            cart.replace(item, cart.get(item).getPrice() + amount); //Keep an eye on this warning
         }
         else cart.put(item, amount);
-        total = item.getPrice; //TODO actually find a way to calculate total after add
+        total += item.getPrice(); //TODO actually find a way to calculate total after add
     }
 
     /**
@@ -53,12 +54,12 @@ public class ShoppingCart {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void removeXProduct(Product item, int amount){
         size -= amount;
-        if (cart.get(item) <= amount){
+        if ((int)cart.get(item) <= amount){
             cart.remove(item);
         }
-        else cart.replace(item, cart.get(item) - amount);
+        else cart.replace(item, (int)cart.get(item) - amount);
 
-        total =  69.69; //TODO actually find a way to calculator total after remove
+        total -=  item.getPrice(); //TODO actually find a way to calculator total after remove
     }
 
 }
