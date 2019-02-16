@@ -9,17 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SetPreferences"></activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RecipieDisplay"
             android:label="@string/title_activity_recipie_display"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".CartDisplay"
-            android:label="@string/title_activity_cart_display"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SetPreferences"
-            android:label="@string/title_activity_set_preferences"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
