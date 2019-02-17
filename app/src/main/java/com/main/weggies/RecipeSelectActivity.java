@@ -46,8 +46,10 @@ public class RecipeSelectActivity extends AppCompatActivity {
 
     }
 
+    RecipeKeyGen recipeKeyGen = new RecipeKeyGen();
+
     public ArrayList<Recipe> getRecipeList(int store){
-        HashMap key = RecipeKeyGen.KeyGen(store);
+        HashMap key = recipeKeyGen.doInBackground(store);
         ArrayList<Recipe> recipeList = new ArrayList<>();
         for(Object restrictions : key.keySet()){
             if(KeyCheck(userKey, (boolean[])restrictions) == true) {
