@@ -18,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 public class WegmansClient {
     public static final String PRODUCT_URL = "https://api.wegmans.io/products/";
     public static final String STORE_URL = "https://api.wegmans.io/stores/";
+    public static final String RECIPE_URL = "https://api.wegmans.io/meals/recipes/";
     public static final String API_VERSION = "api-version=2018-10-18";
     public static final String SUBSCRIPTION_KEY = "Subscription-Key=6d683e376a524292812c36cec365f288";
 
