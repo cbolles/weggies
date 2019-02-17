@@ -14,8 +14,6 @@ public class RecipeKeyGen {
         // To all of these prodcuts to get a recipe key
         boolean[] reciReg = {true, true, true, true, true, true, true, true, true};
         RecipeClient recipeClient = new RecipeClient();
-        for (recipeClient.getRecipes()) {
-
-        }
-    }
+        for (recipeClient.getRecipes()){
+        }    }
 }
