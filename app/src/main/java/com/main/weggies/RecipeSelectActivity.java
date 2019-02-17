@@ -20,7 +20,7 @@ public class RecipeSelectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_select);
 
         myIntent = new Intent(this, SecondActivity.class);
-        theListView = (ListView) findViewById(R.id.myListView);
+        theListView = (ListView) findViewById(R.id.listView_dynamic);
 
         String[] myData = {"blah","bleh", "blur"};
 
