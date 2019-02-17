@@ -10,6 +10,6 @@ public class UserKeyGen {
     private Array userPref;
 
     public UserKeyGen(){
-        boolean[] userPref = {SetPreferences.isMsgFree()};
+        boolean[] userPref = {SetPreferences.isMsgFree(),};
     }
 }

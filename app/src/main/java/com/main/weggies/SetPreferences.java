@@ -26,7 +26,9 @@ public class SetPreferences extends AppCompatActivity {
     boolean hormoneFree;
 
     public Array UserKeyGen(){
-        boolean[] userPref = {isMsgFree(), isAntibioticFree(), isCornFree()};
+        boolean[] userPref = {isMsgFree(), isAntibioticFree(), isCornFree(), isLactovovegetarian(),
+                                isFair(), isRadiationFree(), isCertifiedHumane(), isWild(),
+                                isHormoneFree()};
     }
 
     public boolean isCornFree() {
