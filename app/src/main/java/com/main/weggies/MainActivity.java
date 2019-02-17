@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
     /**
-     * Finds latitude and longitude of the user, used with storeLocation
+     * Finds latitude and longitude of the user, used with storeLocation, sets to locationlistener
      */
     LocationListener locationListener = new LocationListener() {
         @Override
