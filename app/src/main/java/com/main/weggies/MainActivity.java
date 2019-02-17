@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
      * On a button press, move onto another activity and pass information to store
      */
     public void proceed(View view) {
-        Intent intent = new Intent(this, ScrollingActivity.class);
+        Intent intent = new Intent(this, SetPreferences.class);
         EditText budgetTxt = (EditText) findViewById(R.id.budget);
         EditText householdTxt = (EditText) findViewById(R.id.household);
 
@@ -131,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
      * //TODO Create a list of closest to furthest stores in a method somewhere
      */
     public Store getClosestStore(List<Store> stores) {
+        assert stores != null;
         Store closestStore = null;
         for (Store store : stores) {
             if (closestStore == null) {
