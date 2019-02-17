@@ -6,6 +6,6 @@ public class RecipeKeyGen {
     private Array reciReg;
 
     public RecipeKeyGen(){
-        
+
     }
 }
