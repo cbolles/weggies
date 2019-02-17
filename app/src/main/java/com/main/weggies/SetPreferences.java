@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import java.lang.reflect.Array;
+
 import static com.main.weggies.MainActivity.BUDGET;
 import static com.main.weggies.MainActivity.HOUSEHOLD;
 import static com.main.weggies.MainActivity.STORE;
@@ -21,6 +23,10 @@ public class SetPreferences extends AppCompatActivity {
     boolean vegan;
     boolean vegetarian;
     boolean msgFree;
+
+    public Array UserKeyGen(){
+        boolean[] userPref = {isMsgFree(), isAntibioticFree(), isCornFree()};
+    }
 
     public boolean isCornFree() {
         return cornFree;
