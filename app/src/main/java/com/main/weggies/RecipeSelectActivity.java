@@ -2,6 +2,7 @@ package com.main.weggies.searchview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListAdapter;
 
 import com.main.weggies.R;
 
