@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
+    /**
+     * Finds latitude and longitude of the user, used with storeLocation
+     */
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
@@ -53,12 +56,19 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * 'Makes the XML happen' Hendrick Ducasse, 7:25:10 PM
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * On a button press, move onto another activity and pass information to store
+     */
     public void proceed() {
         Intent intent = new Intent(this, ScrollingActivity.class);
         EditText budgetTxt = (EditText) findViewById(R.id.budget);
@@ -76,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Actually gets the user's location
+     * @return user location in lat and lon
+     */
     public storeLocation getUserLocation() {
         String locationProvider = LocationManager.GPS_PROVIDER;
 
