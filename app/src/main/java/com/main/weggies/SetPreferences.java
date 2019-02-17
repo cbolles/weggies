@@ -15,12 +15,13 @@ public class SetPreferences extends AppCompatActivity {
 
     boolean cornFree;
     boolean antibioticFree;
-    boolean glutenFree;
+    boolean radiationFree;
     boolean certifiedHumane;
-    boolean nutFree;
-    boolean vegan;
-    boolean vegetarian;
+    boolean fair;
+    boolean wild;
+    boolean lactovovegetarian;
     boolean msgFree;
+    boolean hormoneFree;
 
     public boolean isCornFree() {
         return cornFree;
@@ -30,24 +31,24 @@ public class SetPreferences extends AppCompatActivity {
         return antibioticFree;
     }
 
-    public boolean isGlutenFree() {
-        return glutenFree;
+    public boolean isRadiationFree() {
+        return radiationFree;
     }
 
     public boolean isCertifiedHumane() {
         return certifiedHumane;
     }
 
-    public boolean isNutFree() {
-        return nutFree;
+    public boolean isFair() {
+        return fair;
     }
 
-    public boolean isVegan() {
-        return vegan;
+    public boolean isWild() {
+        return wild;
     }
 
-    public boolean isVegetarian() {
-        return vegetarian;
+    public boolean isLactovovegetarian() {
+        return lactovovegetarian;
     }
 
     public boolean isMsgFree() {
@@ -58,114 +59,43 @@ public class SetPreferences extends AppCompatActivity {
         return hormoneFree;
     }
 
-    @Override
-    public Intent getIntent() {
-        return intent;
-    }
-
-    public float getBudget() {
-        return budget;
-    }
-
-    public int getHousehold() {
-        return household;
-    }
-
-    public int getStore() {
-        return store;
-    }
-
-    boolean hormoneFree;
-
-    Intent intent = getIntent();
-    float budget = intent.getFloatExtra(BUDGET, 0);
-    int household = intent.getIntExtra(HOUSEHOLD, 0);
-    int store = intent.getIntExtra(STORE, 0 );
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_preferences);
-    }
-
-    public void proceed(){
-        Intent next = new Intent(this, RecipeSelectActivity.class);
-
-        next.putExtra(BUDGET, budget);
-        next.putExtra(HOUSEHOLD, household);
-        next.putExtra(STORE, store);
-
-        startActivity(next);
-
-
-    }
-
     public void onCheckboxClicked(View view){
+        // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
-        switch(view.getId()){
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
             case R.id.antibioticFree:
-                if (checked){
-                    antibioticFree = true;
-                }
-                else {
-                    antibioticFree = false;
-                }
+                antibioticFree = checked;
             case R.id.certifiedHumane:
-                if (checked){
-                    certifiedHumane = true;
-                }
-                else{
-                    certifiedHumane = false;
-                }
+                certifiedHumane = checked;
             case R.id.cornFree:
-                if (checked){
-                    cornFree = true;
-                }
-                else{
-                    cornFree = false;
-                }
-            case R.id.glutenFree:
-                if (checked){
-                    glutenFree = true;
-                }
-                else{
-                    glutenFree = false;
-                }
-            case R.id.msgFree:
-                if (checked){
-                    msgFree = true;
-                }
-                else{
-                    msgFree = false;
-                }
-            case R.id.nutFree:
-                if (checked){
-                    nutFree = true;
-                }
-                else{
-                    nutFree = false;
-                }
-            case R.id.vegan:
-                if (checked){
-                    vegan = true;
-                    vegetarian = true;
-                }
-                else{
-                    vegan = false;
-                }
-            case R.id.vegitarian:
-                if (checked){
-                    vegetarian = true;
-                }
-                else{
-                    vegetarian = false;
-                    vegan = false;
-                }
+                cornFree = checked;
+            case R.id.fair:
+                fair = checked;
             case R.id.hormoneFree:
                 hormoneFree = checked;
-
+            case R.id.irradiated:
+                radiationFree = checked;
+            case R.id.lactovovegitarian:
+                lactovovegetarian = checked;
+            case R.id.msgFree:
+                msgFree = checked;
+            case R.id.wild:
+                wild = checked;
         }
 
+    }
 
+
+    public void proceed(){
+        Intent prev = getIntent();
+        Intent next = new Intent(this, recipeSelectActivity.class);
+
+        next.putExtra(HOUSEHOLD, prev.getIntExtra(HOUSEHOLD, 0));
+        next.putExtra(BUDGET, prev.getFloatExtra(BUDGET, 0));
+        next.putExtra(STORE, prev.getIntExtra(STORE, 0));
+
+        startActivity(next);
     }
 }
