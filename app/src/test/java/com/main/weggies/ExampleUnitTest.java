@@ -1,8 +1,10 @@
 package com.main.weggies;
 
 import com.main.weggies.model.product.Product;
+import com.main.weggies.model.recipe.Recipe;
 import com.main.weggies.model.store.Store;
 import com.main.weggies.wegmans.ProductClient;
+import com.main.weggies.wegmans.RecipeClient;
 import com.main.weggies.wegmans.StoreClient;
 
 import org.junit.Test;
@@ -43,5 +45,13 @@ public class ExampleUnitTest {
         System.out.println(test.getName());
         List<Store> stores = storeClient.getStores();
         System.out.println(stores.get(0).getName());
+    }
+
+    @Test public void testRecipe() {
+        RecipeClient recipeClient =  new RecipeClient();
+        Recipe recipe = recipeClient.getRecipeById(22187);
+        System.out.println(recipe.getName());
+        List<Recipe> recipes = recipeClient.getRecipes();
+        System.out.println(recipes.get(0).getName());
     }
 }
