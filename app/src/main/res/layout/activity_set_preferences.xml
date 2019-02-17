@@ -182,7 +182,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ChalkPref" />
+        app:srcCompat="@drawable/chalkpref" />
 
     <TextView
         android:id="@+id/textView5"
@@ -221,7 +221,7 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:backgroundTintMode="src_atop"
         android:fontFamily="@font/cabin_sketch"
-        android:onClick="proceed"
+        android:onClick="goToNext"
         android:text=">>"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"

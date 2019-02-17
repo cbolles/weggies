@@ -3,8 +3,9 @@
     package="com.main.weggies">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
-    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.GPS" />
 
     <application
         android:allowBackup="true"

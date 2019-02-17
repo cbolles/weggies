@@ -7,9 +7,11 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import com.main.weggies.model.store.Store;
@@ -19,17 +21,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    //TODO fix local.properties
     float budget;
     int household;
-    StoreClient storeClient = new StoreClient();
-    List<Store> stores = storeClient.getStores();
+
 
     static String BUDGET = "com.main.weggies.BUDGET";
     static String HOUSEHOLD = "com.main.weggies.HOUSEHOLD";
     static String STORE = "com.main.weggies.STORE";
 
-    LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+    List<Store> stores;
+
+    LocationManager locationManager;
 
     /**
      * Finds latitude and longitude of the user, used with storeLocation, sets to locationlistener
@@ -56,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private class StoreBuilder extends AsyncTask<Integer, Integer, List<Store>>{
+
+        @Override
+        protected List<Store> doInBackground(Integer... integers) {
+            StoreClient storeClient = new StoreClient();
+            stores = storeClient.getStores();
+
+            return stores;
+        }
+    }
+
     /**
      * 'Makes the XML happen' Hendrick Ducasse, 7:25:10 PM
      * @param savedInstanceState
@@ -64,12 +78,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        new StoreBuilder().execute();
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
     }
+
+
 
     /**
      * On a button press, move onto another activity and pass information to store
      */
-    public void proceed() {
+    public void proceed(View view) {
         Intent intent = new Intent(this, ScrollingActivity.class);
         EditText budgetTxt = (EditText) findViewById(R.id.budget);
         EditText householdTxt = (EditText) findViewById(R.id.household);
@@ -85,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
 
     /**
      * Actually gets the user's location
@@ -126,8 +145,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return closestStore;
     }
-
-
-
-
 }
+
+

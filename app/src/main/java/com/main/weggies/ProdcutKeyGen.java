@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * This is done by creating a psuedo register in java based on the booleans in a products details
  */
 public class ProdcutKeyGen {
-    private Array prefReg;
+    private boolean[] prefReg;
     
     public ProdcutKeyGen(Product product){
         boolean[] prefReg = {product.getIsMsgFree(), product.getIsAntibioticFree(),
@@ -20,7 +20,7 @@ public class ProdcutKeyGen {
                 product.getIsHasNoAddedHormones()};
     }
 
-    public Array getKey(){
+    public boolean[] getKey(){
         return prefReg;
     }
 }

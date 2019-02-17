@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="231dp"
@@ -38,38 +39,38 @@
 
     <EditText
         android:id="@+id/budget"
-        android:layout_width="111dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginTop="92dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <EditText
         android:id="@+id/household"
-        android:layout_width="109dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="184dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="425dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/budget"
-        app:layout_constraintVertical_bias="0.383"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.374" />
 
     <Button
         android:id="@+id/button"
@@ -83,12 +84,12 @@
         android:backgroundTint="@color/colorPrimary"
         android:backgroundTintMode="screen"
         android:fontFamily="@font/cabin"
+        android:onClick="proceed"
         android:text="@string/large_text"
         android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/household" />
 
