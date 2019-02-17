@@ -115,4 +115,9 @@ public class Recipe {
     public void set_links(List<Link> _links) {
         this._links = _links;
     }
+
+    @Override
+    public String toString(){
+        return (getName() + "(" + getServings() + ")");
+    }
 }
