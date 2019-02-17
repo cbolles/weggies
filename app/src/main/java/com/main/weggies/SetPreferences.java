@@ -25,10 +25,13 @@ public class SetPreferences extends AppCompatActivity {
     boolean msgFree;
     boolean hormoneFree;
 
-    public Array UserKeyGen(){
+    String USER = "com.main,weggies.USER";
+
+    public boolean[] UserKeyGen(){
         boolean[] userPref = {isMsgFree(), isAntibioticFree(), isCornFree(), isLactovovegetarian(),
                                 isFair(), isRadiationFree(), isCertifiedHumane(), isWild(),
                                 isHormoneFree()};
+        return userPref;
     }
 
     public boolean isCornFree() {
@@ -95,14 +98,14 @@ public class SetPreferences extends AppCompatActivity {
 
     }
 
-
-    public void proceed(){
+    public void goToNext(View view){
         Intent prev = getIntent();
         Intent next = new Intent(this, RecipeSelectActivity.class);
 
         next.putExtra(HOUSEHOLD, prev.getIntExtra(HOUSEHOLD, 0));
         next.putExtra(BUDGET, prev.getFloatExtra(BUDGET, 0));
         next.putExtra(STORE, prev.getIntExtra(STORE, 0));
+        next.putExtra(USER, UserKeyGen());
 
         startActivity(next);
     }

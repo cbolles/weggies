@@ -12,13 +12,15 @@ import java.util.HashMap;
 
 public class RecipeKeyGen {
     private boolean[] reciReg;
-    private HashMap recipes;
 
-    public RecipeKeyGen(long id, int store){
+
+    public static HashMap KeyGen(int store){
         //For each ingredient, look at the sku and find the product from that sku
         // generate key from each product (or take pregenerated one) and apply bitwise operation
         // To all of these prodcuts to get a recipe key
         boolean[] reciReg = {true, true, true, true, true, true, true, true, true};
+        HashMap recipes = new HashMap();
+
         RecipeClient recipeClient = new RecipeClient();
         ProductClient productClient = new ProductClient(store);
         for (Recipe recipe : recipeClient.getRecipes()){
@@ -40,5 +42,6 @@ public class RecipeKeyGen {
             recipes.put(reciReg, temp);
 
         }
+        return recipes;
     }
 }

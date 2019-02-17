@@ -161,6 +161,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/certifiedHumane"
+        android:onClick="onCheckboxClicked" />
 
 
     <ImageView
@@ -220,7 +221,7 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:backgroundTintMode="src_atop"
         android:fontFamily="@font/cabin_sketch"
-        android:onClick="proceed"
+        android:onClick="goToNext"
         android:text=">>"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
