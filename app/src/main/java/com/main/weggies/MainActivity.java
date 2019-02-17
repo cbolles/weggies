@@ -12,6 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import com.main.weggies.model.store.Store;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     float budget;
@@ -77,10 +81,22 @@ public class MainActivity extends AppCompatActivity {
         double longitude = lastKnownLocation.getLongitude();
 
         return new storeLocation(latitude, longitude);
+    }
+
+    public Store getClosestStore(ArrayList<Store> stores) {
+        Store closestStore = null;
+        for (Store store : stores) {
+            if (closestStore == null) {
+                closestStore = store;
+            } else {
+                if (getUserLocation().distance(store) < getUserLocation().distance(closestStore)) {
+                    closestStore = store;
+                }
+            }
 
 
-
-
+        }
+        return closestStore;
     }
 
 
