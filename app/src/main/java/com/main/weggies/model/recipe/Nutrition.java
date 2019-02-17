@@ -8,7 +8,7 @@ public class Nutrition {
     private int cholesterol;
     private int saturatedFat;
     private int fat;
-    private int caloried;
+    private int calories;
     private int protein;
 
     public String getServingSize() {
@@ -67,12 +67,12 @@ public class Nutrition {
         this.fat = fat;
     }
 
-    public int getCaloried() {
-        return caloried;
+    public int getCalories() {
+        return calories;
     }
 
-    public void setCaloried(int caloried) {
-        this.caloried = caloried;
+    public void setCaloried(int calories) {
+        this.calories = calories;
     }
 
     public int getProtein() {

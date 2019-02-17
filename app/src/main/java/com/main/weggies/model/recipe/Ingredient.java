@@ -12,6 +12,7 @@ public class Ingredient {
     private int displayOrder;
     private int sku;
     private int skuQuantity;
+    private long recipe;
     private List<Link> _links;
 
     public String getGroup() {
@@ -68,6 +69,14 @@ public class Ingredient {
 
     public void setSkuQuantity(int skuQuantity) {
         this.skuQuantity = skuQuantity;
+    }
+
+    public long getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(long recipe) {
+        this.recipe = recipe;
     }
 
     public List<Link> get_links() {

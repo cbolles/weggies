@@ -19,7 +19,7 @@ public class RecipeClient extends WegmansClient {
             ObjectMapper mapper = new ObjectMapper();
             return mapper.readValue(jsonResponse, Recipe.class);
         } catch(IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return null;
     }
@@ -35,6 +35,7 @@ public class RecipeClient extends WegmansClient {
             List<Recipe> recipes = new ArrayList<>();
             for(Recipe recipe : recipesRequest.getRecipes())
                 recipes.add(getRecipeById(recipe.getId()));
+            return recipes;
         } catch (IOException e) {
             e.printStackTrace();
         }

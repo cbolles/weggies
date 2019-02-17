@@ -8,7 +8,7 @@ public class Instructions {
     private String equipment;
     private String directions;
     private String disclaimer;
-    private List<String> prerequisites;
+    private List<Prerequisites> prerequisites;
 
     public String getTesterTips() {
         return testerTips;
@@ -50,11 +50,11 @@ public class Instructions {
         this.disclaimer = disclaimer;
     }
 
-    public List<String> getPrerequisites() {
+    public List<Prerequisites> getPrerequisites() {
         return prerequisites;
     }
 
-    public void setPrerequisites(List<String> prerequisites) {
+    public void setPrerequisites(List<Prerequisites> prerequisites) {
         this.prerequisites = prerequisites;
     }
 }

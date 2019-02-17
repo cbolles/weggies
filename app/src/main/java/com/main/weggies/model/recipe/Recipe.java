@@ -1,5 +1,6 @@
 package com.main.weggies.model.recipe;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.main.weggies.model.product.Link;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class Recipe {
     private Promotion promotions;
     private Nutrition nutrition;
     private List<Ingredient> ingredients;
+    private Instructions instructions;
+    @JsonIgnore
     private List<Link> _links;
 
     public long getId() {
@@ -95,6 +98,14 @@ public class Recipe {
 
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public Instructions getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(Instructions instructions) {
+        this.instructions = instructions;
     }
 
     public List<Link> get_links() {
