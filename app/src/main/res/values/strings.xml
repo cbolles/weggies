@@ -2,11 +2,12 @@
     <string name="app_name">weggies</string>
     <string name="title_activity_set_preferences">SetPreferences</string>
     <string name="title_activity_cart_display">CartDisplay</string>
-    <string name="q_people">How Many People Are You Feeding?</string>
+    <string name="q_people" translatable="false">How Many People Are You Feeding?</string>
     <string name="q_budget">How Much Can You Afford To Spend This Week?</string>
     <string name="q_restriction">Do You Have Any Food Restrictions?(Check All That Apply)</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_recipie_display">RecipieDisplay</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">Proceed</string>
+    <string name="powered_by">Powered by:</string>
 </resources>
