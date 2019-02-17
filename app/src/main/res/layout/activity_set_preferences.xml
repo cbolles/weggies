@@ -15,13 +15,14 @@
         android:layout_marginEnd="286dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/advent_pro_medium"
+        android:onClick="onCheckboxClicked"
         android:text="No Antibiotics"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/cornFree"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hormoneFree"
-        android:onClick="onCheckboxClicked"/>
+        app:layout_constraintTop_toBottomOf="@+id/hormoneFree" />
 
     <CheckBox
         android:id="@+id/cornFree"
@@ -43,7 +44,7 @@
     <CheckBox
         android:id="@+id/wild"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="301dp"
@@ -97,19 +98,19 @@
         android:id="@+id/lactovovegitarian"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="328dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/advent_pro_medium"
         android:onClick="onCheckboxClicked"
         android:text="Lactovovegitarian"
-        app:layout_constraintBottom_toTopOf="@+id/fair"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/barrier"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
 
     <CheckBox
         android:id="@+id/msgFree"
@@ -130,8 +131,8 @@
 
     <CheckBox
         android:id="@+id/fair"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="305dp"
@@ -159,6 +160,7 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/antibioticFree"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/certifiedHumane" />
 
