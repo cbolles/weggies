@@ -16,6 +16,7 @@ import com.main.weggies.model.store.Store;
 import com.main.weggies.wegmans.StoreClient;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,10 +66,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void proceed(){
-        Intent intent = new Intent(this, SetPreferences.class);
-        EditText budgetTxt = (EditText)findViewById(R.id.budget);
-        EditText householdTxt = (EditText)findViewById(R.id.household);
+    /**
+     * On a button press, move onto another activity and pass information to store
+     */
+    public void proceed() {
+        Intent intent = new Intent(this, ScrollingActivity.class);
+        EditText budgetTxt = (EditText) findViewById(R.id.budget);
+        EditText householdTxt = (EditText) findViewById(R.id.household);
 
         int budget = Integer.parseInt(budgetTxt.getText().toString());
         int household = Integer.parseInt(householdTxt.getText().toString());
@@ -107,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
      * @return singular store of which is closest
      * //TODO Create a list of closest to furthest stores in a method somewhere
      */
-    public Store getClosestStore(ArrayList<Store> stores) {
+    public Store getClosestStore(List<Store> stores) {
         Store closestStore = null;
         for (Store store : stores) {
             if (closestStore == null) {

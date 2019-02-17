@@ -98,7 +98,7 @@ public class SetPreferences extends AppCompatActivity {
 
     public void proceed(){
         Intent prev = getIntent();
-        Intent next = new Intent(this, recipeSelectActivity.class);
+        Intent next = new Intent(this, RecipeSelectActivity.class);
 
         next.putExtra(HOUSEHOLD, prev.getIntExtra(HOUSEHOLD, 0));
         next.putExtra(BUDGET, prev.getFloatExtra(BUDGET, 0));
