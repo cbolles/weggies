@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     static String HOUSEHOLD = "com.main.weggies.HOUSEHOLD";
     static String STORE = "com.main.weggies.STORE";
 
-    LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+    List<Store> stores;
+
+    LocationManager locationManager;
 
     /**
      * Finds latitude and longitude of the user, used with storeLocation, sets to locationlistener
@@ -57,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private class StoreBuilder extends AsyncTask<Integer, Integer, List<Store>>{
+
+        @Override
+        protected List<Store> doInBackground(Integer... integers) {
+            StoreClient storeClient = new StoreClient();
+            stores = storeClient.getStores();
+
+            return stores;
+        }
+    }
+
     /**
      * 'Makes the XML happen' Hendrick Ducasse, 7:25:10 PM
      * @param savedInstanceState
@@ -65,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        new StoreBuilder().execute();
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
     }
 
 
@@ -89,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    storeBuilder builder = new storeBuilder();
-    List<Store> stores = builder.doInBackground();
 
     /**
      * Actually gets the user's location
@@ -132,19 +145,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return closestStore;
     }
-
-
-
-
 }
 
-class storeBuilder extends AsyncTask<Integer, Integer, List<Store>>{
 
-    @Override
-    protected List<Store> doInBackground(Integer... integers) {
-        StoreClient storeClient = new StoreClient();
-        List<Store> stores = storeClient.getStores();
-
-        return stores;
-    }
-}
