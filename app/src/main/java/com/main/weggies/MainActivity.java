@@ -16,7 +16,6 @@ import com.main.weggies.model.store.Store;
 import com.main.weggies.wegmans.StoreClient;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     StoreClient storeClient = new StoreClient();
     List<Store> stores = storeClient.getStores();
 
-    String BUDGET = "com.main.weggies.BUDGET";
-    String HOUSEHOLD = "com.main.weggies.HOUSEHOLD";
-    String STORE = "com.main.weggies.STORE";
+    static String BUDGET = "com.main.weggies.BUDGET";
+    static String HOUSEHOLD = "com.main.weggies.HOUSEHOLD";
+    static String STORE = "com.main.weggies.STORE";
 
     LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -66,13 +65,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /**
-     * On a button press, move onto another activity and pass information to store
-     */
-    public void proceed() {
-        Intent intent = new Intent(this, ScrollingActivity.class);
-        EditText budgetTxt = (EditText) findViewById(R.id.budget);
-        EditText householdTxt = (EditText) findViewById(R.id.household);
+    public void proceed(){
+        Intent intent = new Intent(this, SetPreferences.class);
+        EditText budgetTxt = (EditText)findViewById(R.id.budget);
+        EditText householdTxt = (EditText)findViewById(R.id.household);
 
         int budget = Integer.parseInt(budgetTxt.getText().toString());
         int household = Integer.parseInt(householdTxt.getText().toString());
@@ -104,7 +100,13 @@ public class MainActivity extends AppCompatActivity {
         return new storeLocation(latitude, longitude);
     }
 
-    public Store getClosestStore(List<Store> stores) {
+    /**
+     * Given an arraylist of all store gps locations, find the one with smallest distance from user
+     * @param stores
+     * @return singular store of which is closest
+     * //TODO Create a list of closest to furthest stores in a method somewhere
+     */
+    public Store getClosestStore(ArrayList<Store> stores) {
         Store closestStore = null;
         for (Store store : stores) {
             if (closestStore == null) {
