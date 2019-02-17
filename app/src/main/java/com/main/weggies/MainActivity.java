@@ -13,16 +13,21 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import com.main.weggies.model.store.Store;
+import com.main.weggies.wegmans.StoreClient;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     float budget;
     int household;
+    StoreClient storeClient = new StoreClient();
+    List<Store> stores = storeClient.getStores();
 
     String BUDGET = "com.main.weggies.BUDGET";
     String HOUSEHOLD = "com.main.weggies.HOUSEHOLD";
+    String STORE = "com.main.weggies.STORE";
 
     LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -71,9 +76,11 @@ public class MainActivity extends AppCompatActivity {
 
         int budget = Integer.parseInt(budgetTxt.getText().toString());
         int household = Integer.parseInt(householdTxt.getText().toString());
+        Store store = getClosestStore(stores);
 
         intent.putExtra(BUDGET, budget);
         intent.putExtra(HOUSEHOLD, household);
+        intent.putExtra(STORE, store.getNumber());
 
         startActivity(intent);
 
@@ -97,13 +104,7 @@ public class MainActivity extends AppCompatActivity {
         return new storeLocation(latitude, longitude);
     }
 
-    /**
-     * Given an arraylist of all store gps locations, find the one with smallest distance from user
-     * @param stores
-     * @return singular store of which is closest
-     * //TODO Create a list of closest to furthest stores in a method somewhere
-     */
-    public Store getClosestStore(ArrayList<Store> stores) {
+    public Store getClosestStore(List<Store> stores) {
         Store closestStore = null;
         for (Store store : stores) {
             if (closestStore == null) {
