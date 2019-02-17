@@ -1,5 +1,7 @@
 package com.main.weggies;
 
+import android.os.AsyncTask;
+
 import com.main.weggies.model.product.Product;
 import com.main.weggies.model.recipe.Ingredient;
 import com.main.weggies.model.recipe.Recipe;
@@ -10,11 +12,13 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RecipeKeyGen {
+import javax.xml.transform.Result;
+
+public class RecipeKeyGen extends AsyncTask<Integer, Integer, HashMap> {
     private boolean[] reciReg;
 
-
-    public static HashMap KeyGen(int store){
+    @Override
+    protected HashMap doInBackground(Integer... integers) {
         //For each ingredient, look at the sku and find the product from that sku
         // generate key from each product (or take pregenerated one) and apply bitwise operation
         // To all of these prodcuts to get a recipe key
@@ -22,7 +26,7 @@ public class RecipeKeyGen {
         HashMap recipes = new HashMap();
 
         RecipeClient recipeClient = new RecipeClient();
-        ProductClient productClient = new ProductClient(store);
+        ProductClient productClient = new ProductClient(integers[0]);
         for (Recipe recipe : recipeClient.getRecipes()){
             for(Ingredient ingredient : recipe.getIngredients()){
                 Product product = productClient.getProductById(ingredient.getSku());

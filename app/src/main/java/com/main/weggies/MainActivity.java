@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
     //TODO fix local.properties
     float budget;
     int household;
-    StoreClient storeClient = new StoreClient();
-    List<Store> stores = storeClient.getStores();
+
 
     static String BUDGET = "com.main.weggies.BUDGET";
     static String HOUSEHOLD = "com.main.weggies.HOUSEHOLD";
@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
+
     /**
      * On a button press, move onto another activity and pass information to store
      */
@@ -85,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    storeBuilder builder = new storeBuilder();
+    List<Store> stores = builder.doInBackground();
 
     /**
      * Actually gets the user's location
@@ -130,4 +135,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+}
+
+class storeBuilder extends AsyncTask<Integer, Integer, List<Store>>{
+
+    @Override
+    protected List<Store> doInBackground(Integer... integers) {
+        StoreClient storeClient = new StoreClient();
+        List<Store> stores = storeClient.getStores();
+
+        return stores;
+    }
 }
