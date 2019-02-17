@@ -160,7 +160,7 @@
         app:layout_constraintBottom_toTopOf="@+id/antibioticFree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/certifiedHumane"
+        app:layout_constraintTop_toBottomOf="@+id/certifiedHumane" />
 
 
     <ImageView
@@ -214,6 +214,7 @@
         android:layout_width="88dp"
         android:layout_height="395dp"
         android:layout_marginStart="115dp"
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="24dp"
         android:background="@color/colorPrimaryDark"
@@ -227,6 +228,7 @@
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/hormoneFree" />
+        app:layout_constraintStart_toEndOf="@+id/hormoneFree"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 </android.support.constraint.ConstraintLayout>
