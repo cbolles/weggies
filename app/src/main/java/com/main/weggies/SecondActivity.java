@@ -3,10 +3,13 @@ package com.main.weggies;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class SecondActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +24,9 @@ public class SecondActivity extends AppCompatActivity {
 
         myText.setText(message);
 
-        String url = "http://i.imgur.com/DvpvklR.png";
-        Picasso.with(myActivity).load(url).into(imgView);
+        ImageView imgView = (ImageView) findViewById(R.id.imgView);
+
+        String url = "http://i.imgur.com/DvpvklR.png"; //TODO INSERT HOWEVER U GETTING DAT URL THO
+        Picasso.with(null).load(url).into(imgView);
     }
 }

@@ -21,9 +21,9 @@ public class CartActivity extends AppCompatActivity {
         myIntent2 = new Intent(this, SecondActivity.class);
         theListView2 = (ListView) findViewById(R.id.listView_dynamic);
 
-        String[] myData2 = {"recc","bdsgf", "dsgfsad"};
+        String[] ingredients = {"recc","bdsgf", "dsgfsad"};
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myData2);
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ingredients);
 
         theListView2.setAdapter(myAdapter);
         theListView2.setOnItemClickListener(listClick);
