@@ -19,5 +19,8 @@ public class SecondActivity extends AppCompatActivity {
         TextView myText = (TextView) findViewById(R.id.textView);
 
         myText.setText(message);
+
+        String url = "http://i.imgur.com/DvpvklR.png";
+        Picasso.with(myActivity).load(url).into(imgView);
     }
 }
