@@ -20,7 +20,8 @@
         app:layout_constraintBottom_toTopOf="@+id/cornFree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hormoneFree" />
+        app:layout_constraintTop_toBottomOf="@+id/hormoneFree"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/cornFree"
@@ -36,7 +37,8 @@
         app:layout_constraintBottom_toTopOf="@+id/nutFree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/antibioticFree" />
+        app:layout_constraintTop_toBottomOf="@+id/antibioticFree"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/glutenFree"
@@ -52,7 +54,8 @@
         app:layout_constraintBottom_toTopOf="@+id/certifiedHumane"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vegitarian" />
+        app:layout_constraintTop_toBottomOf="@+id/vegitarian"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/certifiedHumane"
@@ -68,7 +71,8 @@
         app:layout_constraintBottom_toTopOf="@+id/hormoneFree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/glutenFree" />
+        app:layout_constraintTop_toBottomOf="@+id/glutenFree"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/nutFree"
@@ -84,7 +88,8 @@
         app:layout_constraintBottom_toTopOf="@+id/msgFree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cornFree" />
+        app:layout_constraintTop_toBottomOf="@+id/cornFree"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/vegan"
@@ -100,7 +105,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/msgFree"
@@ -116,7 +122,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nutFree" />
+        app:layout_constraintTop_toBottomOf="@+id/nutFree"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/vegitarian"
@@ -133,7 +140,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vegan" />
+        app:layout_constraintTop_toBottomOf="@+id/vegan"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/hormoneFree"
@@ -149,7 +157,8 @@
         app:layout_constraintBottom_toTopOf="@+id/antibioticFree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/certifiedHumane" />
+        app:layout_constraintTop_toBottomOf="@+id/certifiedHumane"
+        android:onClick="onCheckboxClicked"/>
 
     <ImageView
         android:id="@+id/imageView4"
