@@ -43,10 +43,10 @@ public class ShoppingCart {
         size += amount;
         if (cart.containsKey(item)){
 
-            cart.replace(item, cart.get(item).getPrice() + amount); //Keep an eye on this warning
+            cart.replace(item, (int)cart.get(item) + amount); //Keep an eye on this warning
         }
         else cart.put(item, amount);
-        total += item.getPrice(); //TODO actually find a way to calculate total after add
+        total += item.getPrice();
 
     }
 
@@ -65,7 +65,7 @@ public class ShoppingCart {
         }
         else cart.replace(item, (int)cart.get(item) - amount);
 
-        total -=  item.getPrice(); //TODO actually find a way to calculator total after remove
+        total -=  item.getPrice();
 
     }
 
