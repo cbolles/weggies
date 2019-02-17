@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Location lastKnownLocation = locationManager.getLastKnownLocation(locationProvider);
 
+
         double latitude = lastKnownLocation.getLatitude();
         double longitude = lastKnownLocation.getLongitude();
 
