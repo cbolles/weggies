@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import com.main.weggies.model.store.Store;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * On a button press, move onto another activity and pass information to store
      */
-    public void proceed() {
+    public void proceed(View view) {
         Intent intent = new Intent(this, ScrollingActivity.class);
         EditText budgetTxt = (EditText) findViewById(R.id.budget);
         EditText householdTxt = (EditText) findViewById(R.id.household);
