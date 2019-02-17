@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 
 public class SecondActivity extends AppCompatActivity {
 
