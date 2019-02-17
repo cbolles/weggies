@@ -4,6 +4,7 @@ import com.main.weggies.model.product.Product;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,8 @@ public class ShoppingCartClient extends WegmansClient {
             JSONArray jsonArray = new JSONArray(jsonResponse);
             List<Integer> productIds = new ArrayList<>();
             for(int i = 0; i < jsonArray.length(); i++) {
-                productIds.add(jsonArray.getInt(i));
+                JSONObject jsonObject = jsonArray.getJSONObject(0);
+                productIds.add(jsonObject.getInt("product_sku"));
             }
             List<Product> products = new ArrayList<>();
             ProductClient productClient = new ProductClient(storeId);
