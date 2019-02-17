@@ -67,6 +67,8 @@ public class RecipeSelectActivity extends AppCompatActivity {
             String itemValue = (String) theListView.getItemAtPosition(position);
 
             myIntent.putExtra("RECIPE_SELECTED", itemValue);
+
+            startActivity(myIntent);
         }
     };
 }
