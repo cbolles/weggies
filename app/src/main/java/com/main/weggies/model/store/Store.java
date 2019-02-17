@@ -95,4 +95,5 @@ public class Store {
     public void set_links(List<Link> _links) {
         this._links = _links;
     }
+
 }

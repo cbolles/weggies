@@ -13,7 +13,7 @@ import static com.main.weggies.MainActivity.BUDGET;
 import static com.main.weggies.MainActivity.HOUSEHOLD;
 import static com.main.weggies.MainActivity.STORE;
 
-public class SetPreferences extends AppCompatActivity {
+public class  SetPreferences extends AppCompatActivity {
 
     boolean cornFree;
     boolean antibioticFree;
@@ -26,6 +26,12 @@ public class SetPreferences extends AppCompatActivity {
     boolean hormoneFree;
 
     String USER = "com.main,weggies.USER";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_set_preferences);
+    }
 
     public boolean[] UserKeyGen(){
         boolean[] userPref = {isMsgFree(), isAntibioticFree(), isCornFree(), isLactovovegetarian(),

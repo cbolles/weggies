@@ -14,7 +14,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.main.weggies.model.recipe.Recipe;
 import com.main.weggies.model.store.Store;
+import com.main.weggies.wegmans.RecipeClient;
 import com.main.weggies.wegmans.StoreClient;
 
 import java.util.ArrayList;
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         protected List<Store> doInBackground(Integer... integers) {
             StoreClient storeClient = new StoreClient();
             stores = storeClient.getStores();
-
+            System.out.println(stores.get(1).toString());
             return stores;
         }
     }
@@ -94,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
 
         int budget = Integer.parseInt(budgetTxt.getText().toString());
         int household = Integer.parseInt(householdTxt.getText().toString());
-        Store store = getClosestStore(stores);
+        //Store store = getClosestStore(stores);
 
         intent.putExtra(BUDGET, budget);
         intent.putExtra(HOUSEHOLD, household);
-        intent.putExtra(STORE, store.getNumber());
+        intent.putExtra(STORE, 40);
 
         startActivity(intent);
 
@@ -131,8 +133,10 @@ public class MainActivity extends AppCompatActivity {
      * //TODO Create a list of closest to furthest stores in a method somewhere
      */
     public Store getClosestStore(List<Store> stores) {
-        assert stores != null;
-        Store closestStore = null;
+        if (stores == null){
+            return stores.get(1);
+        }
+        Store closestStore = stores.get(1);
         for (Store store : stores) {
             if (closestStore == null) {
                 closestStore = store;
