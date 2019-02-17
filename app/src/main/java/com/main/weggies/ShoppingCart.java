@@ -46,7 +46,7 @@ public class ShoppingCart {
             cart.replace(item, (int)cart.get(item) + amount); //Keep an eye on this warning
         }
         else cart.put(item, amount);
-        total += item.getPrice();
+        total += item.getPrice() * amount;
 
     }
 
@@ -65,7 +65,7 @@ public class ShoppingCart {
         }
         else cart.replace(item, (int)cart.get(item) - amount);
 
-        total -=  item.getPrice();
+        total -=  item.getPrice() * amount;
 
     }
 
