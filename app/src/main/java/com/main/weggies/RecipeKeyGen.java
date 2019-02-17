@@ -7,9 +7,12 @@ import com.main.weggies.wegmans.ProductClient;
 import com.main.weggies.wegmans.RecipeClient;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RecipeKeyGen {
-    private Array reciReg;
+    private boolean[] reciReg;
+    private HashMap recipes;
 
     public RecipeKeyGen(long id, int store){
         //For each ingredient, look at the sku and find the product from that sku
@@ -28,8 +31,14 @@ public class RecipeKeyGen {
                     }
                 }
 
-                }
-
             }
+            if(!recipes.containsKey(reciReg)){
+                recipes.put(reciReg, new ArrayList<Recipe>());
+            }
+            ArrayList<Recipe> temp = (ArrayList)recipes.get(reciReg);
+            temp.add(recipe);
+            recipes.put(reciReg, temp);
+
         }
+    }
 }
